@@ -55,8 +55,8 @@ DocParser
 |    |── docx_parser.py           # Чтение исходного DOCX файла
 |    |── semantic_parser.py       # Извлечение семантических разделов
 |    └── structure_parser.py      # Восстановление структуры документа
-|── result/                       # Директория с итоговым Markdown файлом
-|
+|── result/                       
+|    └── interface_spec.md        # Итоговый Markdown файл
 |── document_processor.py         # Запуск всех этапов обработки
 |── main.py                       # Взаимодействие с пользователем
 |── README.md                     # Основная информация о проекте
