@@ -1,3 +1,4 @@
+from integrations.google_docs_downloader import download_google_doc
 from parsers.docx_parser import parse_docx
 from parsers.structure_parser import parse_structure
 from parsers.semantic_parser import parse_sections
@@ -6,8 +7,11 @@ from exporters.md_exporter import export_markdown
 from config.document_config import DOCUMENT_CONFIG
 
 
-def process_document(file_path):
+def process_document(file_path, doc_url, source_choice):
     """Метод преобразования DOCX спецификации в Markdown файл."""
+
+    if source_choice == "1":
+        file_path = download_google_doc(doc_url)
 
     # Чтение исходного DOCX
     doc_elements = parse_docx(file_path)
@@ -24,4 +28,3 @@ def process_document(file_path):
 
     # Экспорт результата в Markdown файл
     export_markdown(md_structure)
-

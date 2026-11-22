@@ -70,7 +70,7 @@ def parse_structure(doc_elements):
                     doc_structure["elements"].append(element)
 
     if doc_structure["title"] is None:
-        logger.error(f"В документе не найдено название. Проверьте оформление заголовка документа.")
+        logger.error("В документе не найдено название. Проверьте оформление заголовка документа.")
         raise ValueError("В документе не найдено название.")
 
     logger.info("Структура документа успешно построена.")
